@@ -6,8 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     new Rigidbody2D rigidbody2D;
     new Transform transform;
-    [SerializeField] Transform arrow;
-    SpriteMask arrowMask;
+    Transform arrow;
 
     float force = 0;
     const float forcePerSecond = 0.75f;
@@ -17,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        arrowMask = arrow.GetComponentInChildren<SpriteMask>();
     }
 
     void Update()
@@ -27,12 +25,9 @@ public class PlayerMovement : MonoBehaviour
             force += forcePerSecond * Time.deltaTime;
             force = Mathf.Min(1, force);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            arrow.position = (transform.position + mousePosition) / 2;
-            Vector3 diff = mousePosition - transform.position;
-            float angle = -Mathf.Atan(diff.x / diff.y) / Mathf.PI * 180;
-            if (diff.y < 0)
-                angle = angle - 180;
-            arrow.eulerAngles = new Vector3(0, 0, angle);
+
+            ArrowSpawner.arrow.ApplyPosition(transform.position, mousePosition);
+            ArrowSpawner.arrow.Force = force;
         } 
         if (Input.GetMouseButtonUp(0) && !GameplayMenu.pause)
         {
@@ -43,10 +38,8 @@ public class PlayerMovement : MonoBehaviour
                 Jump(diff.normalized * force);
             }
             force = 0;
-            arrow.position = new Vector2(10, 10);
+            ArrowSpawner.arrow.Force = force;
         }
-        arrowMask.transform.localPosition = new Vector2(0, (1 - force) * -0.52f);
-        arrowMask.transform.localScale = new Vector2(4, 1 + (5.5f - 1) * force);
     }
     void Jump(Vector3 where)
     {

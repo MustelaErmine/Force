@@ -37,4 +37,5 @@ public class Save
     }
 
     public int lastLevel = 0;
+    public int cosmeticArrow = 0;
 }
