@@ -5,6 +5,7 @@ public class LevelFinish : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LevelManager.instance.EnterNextLevel(SceneManager.GetActiveScene().buildIndex);
+        if (collision.tag == "Player")
+            LevelManager.instance.EnterNextLevel(SceneManager.GetActiveScene().buildIndex);
     }
 }
