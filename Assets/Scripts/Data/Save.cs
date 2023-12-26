@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using UnityEngine.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,11 +29,11 @@ public class Save
             Instance = new Save();
             Keep();
         }
-        Instance = JsonConvert.DeserializeObject<Save>(File.ReadAllText(path));
+        Instance = JsonUtility.FromJson<Save>(File.ReadAllText(path));
     }
     public static void Keep()
     {
-        File.WriteAllText(path, JsonConvert.SerializeObject(_instance));
+        File.WriteAllText(path, JsonUtility.ToJson(_instance));
     }
 
     public int lastLevel = 0;

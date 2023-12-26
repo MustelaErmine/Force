@@ -9,25 +9,25 @@ EditorBuildSettings:
     path: Assets/Scenes/Menues/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 0.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 0.unity
     guid: a2c4e04ffcf4fa34b84f7c8cffe74f64
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 1.unity
     guid: 200261b697356fc4b8c9f66f16aced62
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 2.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 2.unity
     guid: 071cce14fdc6bec479737e221bc00634
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 3.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 3.unity
     guid: cfebaf14b6304de4ab90e79dd7290e0b
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 4.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 4.unity
     guid: 4fd60a592ecb1654fb01b7bfd39d2840
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 5.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 5.unity
     guid: 5c299977d10ba6244bafb3b1acf8ba16
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 6.unity
+    path: Assets/Scenes/Levels/PreAlpha/Level 6.unity
     guid: b4c93cda590069446a9eee4338c0dc52
   - enabled: 1
     path: Assets/Scenes/Levels/LevelTemplate.unity
