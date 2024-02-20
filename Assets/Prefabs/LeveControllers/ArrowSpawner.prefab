@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7873325962100767768}
-  - component: {fileID: 7873325962100767771}
+  - component: {fileID: 4186902410599002640}
   m_Layer: 0
   m_Name: ArrowSpawner
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7873325962100767771
+--- !u!114 &4186902410599002640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7873325962100767769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b09029bc31e31409e636bc9937e81f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3eeffa999e40ddd4f9d170d2906050f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab:

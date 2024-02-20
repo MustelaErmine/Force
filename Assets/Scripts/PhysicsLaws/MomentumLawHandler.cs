@@ -32,12 +32,17 @@ public class MomentumLawHandler : PhysicsLawHandler
     {
         if (mode)
         {
-            if ((oldVelocity - rigidbody2D.velocity.magnitude) < 0.1f)
+            if ((oldVelocity - rigidbody2D.velocity.sqrMagnitude) < 0.1f)
             {
-                rigidbody2D.velocity *= 0.9f;
-                rigidbody2D.angularVelocity *= 0.9f;
+                rigidbody2D.velocity *= 0.2f;
+                rigidbody2D.angularVelocity *= 0.2f;
+            }
+            else
+            {
+                rigidbody2D.velocity *= 0f;
+                rigidbody2D.angularVelocity *= 0f;
             }
         }
-        oldVelocity = rigidbody2D.velocity.magnitude;
+        oldVelocity = rigidbody2D.velocity.sqrMagnitude;
     }
 }

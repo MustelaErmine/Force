@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DemoArrow : MonoBehaviour, IArrow
+public class DemoArrow : MonoBehaviour, IArrowDisplay
 {
     new Transform transform;
     SpriteMask arrowMask;

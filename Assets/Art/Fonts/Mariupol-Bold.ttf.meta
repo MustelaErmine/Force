@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ca484b415a96f2341a58c4a913b05e4f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Mariupol
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 28b4cddc7f81002458ef5da2df2868f6, type: 3}
+  - {fileID: 12800000, guid: 0289ca9c545f8c145ab5e1b2613059d1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
