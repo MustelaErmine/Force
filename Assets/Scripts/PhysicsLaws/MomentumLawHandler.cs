@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MomentumLawHandler : PhysicsLawHandler
 {
-    public override Law MyLaw => Law.ConservationOfMomentum;
+    public override LawEnum MyLaw => LawEnum.ConservationOfMomentum;
 
     bool mode;
     new Rigidbody2D rigidbody2D;

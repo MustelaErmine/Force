@@ -1,10 +1,9 @@
-﻿public enum Law
+﻿public enum LawEnum
 {
     None,
     Gravity,
     AmontonCoulomb,
     ConservationOfMomentum,
-    NewtonsSecond,
     ConservationOfEnergy,
     Hooke,
     Bernoullis

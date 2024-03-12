@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnergyLawHandler : PhysicsLawHandler
 {
-    public override Law MyLaw => Law.ConservationOfEnergy;
+    public override LawEnum MyLaw => LawEnum.ConservationOfEnergy;
 
     bool mode;
     new Rigidbody2D rigidbody2D;

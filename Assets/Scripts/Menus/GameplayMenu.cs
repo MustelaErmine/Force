@@ -25,16 +25,16 @@ public class GameplayMenu : MonoBehaviour
         {
             initialized = true;
 
-            Law[] allLaws = LawsController.instance.inScene.ToArray();
+            LawEnum[] allLaws = LawsController.instance.inScene.ToArray();
 
             Transform first = lawsPanel.transform.GetChild(1);
 
-            void ConfigureLaw(Transform where, Law law)
+            void ConfigureLaw(Transform where, LawEnum law)
             {
                 where.GetComponentInChildren<Text>().text = law.ToString();
                 Toggle toggle = where.GetComponent<Toggle>();
                 toggle.isOn = LawsController.instance.enabledLaws.Contains(law);
-                toggle.interactable = law != Law.Gravity || UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 7;
+                toggle.interactable = true;
                 toggle.onValueChanged.AddListener((bool on) => {
                     if (on)
                         LawsController.instance.EnableLaw(law);

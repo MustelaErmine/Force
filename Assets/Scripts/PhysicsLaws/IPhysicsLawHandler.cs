@@ -1,5 +1,5 @@
 ﻿public interface IPhysicsLawHandler
 {
-    void OnLawsUpdate(Law[] newLaws);
-    Law MyLaw { get; }
+    void OnLawsUpdate(LawEnum[] newLaws);
+    LawEnum MyLaw { get; }
 }

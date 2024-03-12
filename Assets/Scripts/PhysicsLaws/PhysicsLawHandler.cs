@@ -3,11 +3,11 @@ using UnityEngine;
 
 public abstract class PhysicsLawHandler : MonoBehaviour, IPhysicsLawHandler 
 {
-    public virtual Law MyLaw => Law.None;
+    public virtual LawEnum MyLaw => LawEnum.None;
 
     private bool? enabledNow = null;
 
-    public void OnLawsUpdate(Law[] newLaws)
+    public void OnLawsUpdate(LawEnum[] newLaws)
     {
         if (newLaws.ToList().Contains(MyLaw) && (!enabledNow.HasValue || !enabledNow.Value))
         {

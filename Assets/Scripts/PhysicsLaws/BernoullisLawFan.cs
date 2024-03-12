@@ -5,7 +5,7 @@ using UnityEngine;
 public class BernoullisLawFan : PhysicsLawHandler
 {
 
-    public override Law MyLaw => Law.Bernoullis;
+    public override LawEnum MyLaw => LawEnum.Bernoullis;
 
     bool mode;
 

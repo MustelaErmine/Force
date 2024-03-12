@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FrictionForceHandler : PhysicsLawHandler
 {
-    public override Law MyLaw => Law.AmontonCoulomb;
+    public override LawEnum MyLaw => LawEnum.AmontonCoulomb;
 
     [SerializeField] bool searchInChildren;
 

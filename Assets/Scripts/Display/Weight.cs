@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Weight : Movable
+public class Weight : MonoBehaviour
 {
     public float Mass { 
         set
         {
             _mass = value;
             _rb.mass = _mass;
-            _textMeshPro.text = $"{_mass} kg";
+            _textMeshPro.text = $"{_mass}";
         }
         get => _mass;
     }
@@ -20,7 +20,6 @@ public class Weight : Movable
     [SerializeField] private TextMeshPro _textMeshPro;
     void Start()
     {
-        base.Start();
         Mass = _rb.mass;
     }
 }

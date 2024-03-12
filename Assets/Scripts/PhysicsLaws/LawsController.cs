@@ -8,12 +8,12 @@ public class LawsController : MonoBehaviour
 {
     public static LawsController instance;
 
-    public List<Law> inScene;
-    public List<Law> enabledLaws;
+    public List<LawEnum> inScene;
+    public List<LawEnum> enabledLaws;
 
-    public UnityEvent<Law[]> lawsUpdated;
+    public UnityEvent<LawEnum[]> lawsUpdated;
 
-    public bool CanContinue { get => enabledLaws.Count == 3; }
+    public bool CanContinue { get => true; }
 
     void Awake()
     {
@@ -25,7 +25,7 @@ public class LawsController : MonoBehaviour
         lawsUpdated.Invoke(enabledLaws.ToArray());
     }
 
-    public void EnableLaw(Law law)
+    public void EnableLaw(LawEnum law)
     {
         if (!enabledLaws.Contains(law))
         {
@@ -33,7 +33,7 @@ public class LawsController : MonoBehaviour
         }
         lawsUpdated.Invoke(enabledLaws.ToArray());
     }
-    public void DisableLaw(Law law)
+    public void DisableLaw(LawEnum law)
     {
         if (enabledLaws.Contains(law))
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityLawHandler : PhysicsLawHandler
 {
-    public override Law MyLaw => Law.Gravity;
+    public override LawEnum MyLaw => LawEnum.Gravity;
 
     private Vector2 oldGravity = new Vector2(0f, -9.81f);
 

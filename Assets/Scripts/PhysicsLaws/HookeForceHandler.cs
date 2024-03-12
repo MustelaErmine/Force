@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HookeForceHandler : PhysicsLawHandler
 {
-    public override Law MyLaw => Law.Hooke;
+    public override LawEnum MyLaw => LawEnum.Hooke;
 
     [SerializeField] bool searchInChildren;
 
