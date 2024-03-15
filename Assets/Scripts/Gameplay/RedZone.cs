@@ -8,14 +8,14 @@ public class RedZone : MonoBehaviour
     {
         if (collision.GetComponent<Movable>() != null)
         {
-            collision.GetComponent<Movable>().canMove++;
+            collision.GetComponent<Movable>().blockers.Add(GetHashCode());
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Movable>() != null)
         {
-            collision.GetComponent<Movable>().canMove--;
+            collision.GetComponent<Movable>().blockers.Remove(GetHashCode());
         }
     }
 }

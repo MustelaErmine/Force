@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CastHandler : MonoBehaviour
 {
-    public static IArrowDisplay arrow;
+    public static IArrowDisplay arrow = null;
     [SerializeField] GameObject[] arrowPrefab;
     static Movable _chosenMovable = null;
     public static Movable ChosenMovable
     {
-        get => _chosenMovable; set {
+        get => _chosenMovable; 
+        set {
             if (_chosenMovable != null)
                 _chosenMovable.IsChosen = false;
             _chosenMovable = value;
@@ -18,7 +19,10 @@ public class CastHandler : MonoBehaviour
 
     void Start()
     {
-        GameObject _arrow = Instantiate(arrowPrefab[Save.Instance.cosmeticArrow]);
-        arrow = _arrow.GetComponent<IArrowDisplay>();
+        if (arrow == null)
+        {
+            GameObject _arrow = Instantiate(arrowPrefab[Save.Instance.cosmeticArrow]);
+            arrow = _arrow.GetComponent<IArrowDisplay>();
+        }
     }
 }

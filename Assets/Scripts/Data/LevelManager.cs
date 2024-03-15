@@ -6,7 +6,7 @@ using System.Linq;
 
 public class LevelManager : MonoBehaviour
 {
-    public int[] levels;
+    public string[] levels;
 
     public static LevelManager instance;
 
@@ -15,18 +15,30 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
     
-    public int NextLevel(int thisScene)
+    public string GetNextLevel(string thisScene)
     {
         int index = levels.ToList().IndexOf(thisScene);
         if (index == levels.Length - 1)
-            return 0;
+            return "SeasonChoice";
         return levels[index + 1];
     }
-    public void EnterNextLevel(int thisScene)
+    public void NextLevel(string thisScene)
     {
-        int to = NextLevel(thisScene);
-        Save.Instance.lastLevel = Mathf.Max(to - 1, Save.Instance.lastLevel);
+        string to = GetNextLevel(thisScene);
+        Save.Instance.levelDone.Add(thisScene);
         Save.Keep();
         SceneManager.LoadScene(to);
+    }
+    public void WinLevel()
+    {
+
+    }
+    public void LoseLevel()
+    {
+
+    }
+    public void ExitLevel()
+    {
+
     }
 }

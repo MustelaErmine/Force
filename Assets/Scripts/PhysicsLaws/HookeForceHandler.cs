@@ -17,7 +17,7 @@ public class HookeForceHandler : PhysicsLawHandler
         colliders = GetComponents<Collider2D>();
         if (searchInChildren)
         {
-            colliders = (colliders.ToList().Union(GetComponentsInChildren<Collider2D>().ToList())).ToArray();
+            colliders = colliders.ToList().Union(GetComponentsInChildren<Collider2D>().ToList()).ToArray();
         }
     }
 

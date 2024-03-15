@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDisplay : MonoBehaviour
+public class PlayerDefaultDisplay : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     Rigidbody2D parentRigidbody2D;

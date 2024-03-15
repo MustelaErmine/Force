@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -33,7 +34,7 @@ public class Movable : MonoBehaviour, IPointerClickHandler
     const float forcePerSecond = 0.75f;
     const float forceCoeff = 1500f;
 
-    public int canMove = 0;
+    public HashSet<int> blockers = new HashSet<int>();
 
     protected void Start()
     {
@@ -43,16 +44,16 @@ public class Movable : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
-        if (CastHandler.ChosenMovable == this && Input.GetMouseButton(0) && !GameplayMenu.pause && canMove == 0)
+        if (CastHandler.ChosenMovable == this && Input.GetMouseButton(0) && !GameplayMenu.pause && blockers.Count == 0)
         {
             force += forcePerSecond * Time.deltaTime;
             force = Mathf.Min(1, force);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             CastHandler.arrow.ApplyPosition(_transform.position, mousePosition);
-            CastHandler.arrow.Force = force;
+            CastHandler.arrow.ApplyForce(force);
         }
-        if (CastHandler.ChosenMovable == this && Input.GetMouseButtonUp(0) && !GameplayMenu.pause && canMove == 0)
+        if (CastHandler.ChosenMovable == this && Input.GetMouseButtonUp(0) && !GameplayMenu.pause && blockers.Count == 0)
         {
             if (force > 0.01f)
             {
@@ -61,7 +62,7 @@ public class Movable : MonoBehaviour, IPointerClickHandler
                 Jump(diff.normalized * force);
             }
             force = 0;
-            CastHandler.arrow.Force = force;
+            CastHandler.arrow.ApplyForce(force);
         }
     }
     void Jump(Vector3 where)

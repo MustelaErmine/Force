@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface IArrowDisplay
 {
-    public float Force { set; }
-    public void ApplyPosition(Vector2 characterPosition, Vector2 mousePosition);
+    public void ApplyForce(float force);
+    public void ApplyPosition(Vector2 objectPosition, Vector2 mousePosition);
 }

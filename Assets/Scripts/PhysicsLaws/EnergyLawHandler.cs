@@ -17,6 +17,7 @@ public class EnergyLawHandler : PhysicsLawHandler
     new void Start()
     {
         base.Start();
+        StartCoroutine(Coroutine());
     }
 
     protected override void EnableLaw()
@@ -27,11 +28,16 @@ public class EnergyLawHandler : PhysicsLawHandler
     {
         mode = true;
     }
-    private void Update()
+    IEnumerator Coroutine()
     {
-        if (mode)
+        while (true)
         {
-            rigidbody2D.velocity = new Vector2(0, Mathf.Clamp(rigidbody2D.velocity.y, -9.81f, 0f));
+            if (mode)
+            {
+                yield return new WaitForSeconds(0.02f);
+                rigidbody2D.velocity *= 0.99f;
+            }
+            yield return new WaitForEndOfFrame();
         }
     }
 }

@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
     }
     
     void UpdateButtons()
-    {
+    { /*
         for (int i = 0; i < buttonsOnScreen; i++)
         {
             levelButtons[i].GetComponentInChildren<Text>().text = (startIndex + i).ToString();
@@ -41,6 +41,7 @@ public class MainMenu : MonoBehaviour
                 levelButtons[i].GetComponentInChildren<Text>().color = new Color(9,9,9);
             }
         }
+        */
         left.interactable = startIndex != 0;
         right.interactable = startIndex != LevelManager.instance.levels.Length - buttonsOnScreen;
     }

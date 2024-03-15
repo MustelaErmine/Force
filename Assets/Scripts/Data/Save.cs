@@ -24,6 +24,7 @@ public class Save
 
     public static void Load()
     {
+        ///////////////////throw new NotImplementedException();
         if (!File.Exists(path))
         {
             Instance = new Save();
@@ -33,9 +34,10 @@ public class Save
     }
     public static void Keep()
     {
+        //throw new NotImplementedException();
         File.WriteAllText(path, JsonUtility.ToJson(_instance));
     }
 
-    public int lastLevel = 0;
+    public HashSet<string> levelDone = new HashSet<string>();
     public int cosmeticArrow = 0;
 }
