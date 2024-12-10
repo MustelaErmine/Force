@@ -32,7 +32,7 @@ public class PlayerDefaultDisplay : MonoBehaviour
     {
         while (flash)
         {
-            yield return new WaitForSeconds(Random.Range(5, 10));
+            yield return new WaitForSeconds(Random.Range(2, 5));
             eyes.sprite = eyesClose;
             yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
             eyes.sprite = eyesOpen;
@@ -49,6 +49,13 @@ public class PlayerDefaultDisplay : MonoBehaviour
         {
             leg1.rotation = Quaternion.Euler(0, 0, oldRot1);
             leg2.rotation = Quaternion.Euler(0, 0, oldRot2);
+        }
+        if (parentRigidbody2D.velocity.magnitude > 0f)
+        {
+            if (parentRigidbody2D.velocity.y > 0f)
+                transform.localScale.Set(1.1f, 1.1f, 1f);
+            else
+                transform.localScale.Set(-1.1f, 1.1f, 1f);
         }
     }
 }

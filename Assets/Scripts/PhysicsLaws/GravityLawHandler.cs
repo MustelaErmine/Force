@@ -19,7 +19,7 @@ public class GravityLawHandler : PhysicsLawHandler
     }
     protected override void DisableLaw()
     {
-        oldGravity = Physics2D.gravity;
+        //oldGravity = Physics2D.gravity;
         Physics2D.gravity = Vector2.zero;
     }
 }

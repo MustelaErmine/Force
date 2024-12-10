@@ -4,25 +4,48 @@ using UnityEngine;
 
 public class CastHandler : MonoBehaviour
 {
-    public static IArrowDisplay arrow = null;
+    public  IArrowDisplay arrow = null;
     [SerializeField] GameObject[] arrowPrefab;
-    static Movable _chosenMovable = null;
+    Movable _chosenMovable = null;
+    public static CastHandler instanse;
+    public AudioSource audioSource;
+    [SerializeField] AudioClip slideClip, fastClip;
     public static Movable ChosenMovable
     {
-        get => _chosenMovable; 
+        get => instanse._chosenMovable; 
         set {
-            if (_chosenMovable != null)
-                _chosenMovable.IsChosen = false;
-            _chosenMovable = value;
+            if (instanse._chosenMovable != null)
+                instanse._chosenMovable.IsChosen = false;
+            instanse._chosenMovable = value;
         }
+    }
+    public static void Clear()
+    {
+        instanse.arrow = null;
+        instanse._chosenMovable = null;
     }
 
     void Start()
     {
+        if (instanse != null && instanse.gameObject.activeSelf)
+            return;
+        instanse = this;
         if (arrow == null)
         {
             GameObject _arrow = Instantiate(arrowPrefab[Save.Instance.cosmeticArrow]);
+            _arrow.transform.position = new Vector2(20, 20);
             arrow = _arrow.GetComponent<IArrowDisplay>();
         }
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void PlaySlide()
+    {
+        audioSource.clip = slideClip;
+        audioSource.Play();
+    }
+    public void PlayFast()
+    {
+        audioSource.clip = fastClip;
+        audioSource.Play();
     }
 }

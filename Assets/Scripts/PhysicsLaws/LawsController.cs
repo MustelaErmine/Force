@@ -8,7 +8,6 @@ public class LawsController : MonoBehaviour
 {
     public static LawsController instance;
 
-    public List<LawEnum> inScene;
     public List<LawEnum> enabledLaws;
 
     public UnityEvent<LawEnum[]> lawsUpdated;

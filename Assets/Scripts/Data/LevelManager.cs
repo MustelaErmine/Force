@@ -1,44 +1,70 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public string[] levels;
+    public static SeasonContainer seasonContainer;
+    public SeasonContainer localSeasonContainer;
+
+    public GameplayMenu menu;
 
     public static LevelManager instance;
 
     public void Awake()
     {
         instance = this;
+        if (localSeasonContainer != null && seasonContainer == null)
+        {
+            seasonContainer = localSeasonContainer;
+        }
     }
-    
-    public string GetNextLevel(string thisScene)
+
+    public void LoadNextLevel()
     {
-        int index = levels.ToList().IndexOf(thisScene);
-        if (index == levels.Length - 1)
-            return "SeasonChoice";
-        return levels[index + 1];
+        CastHandler.Clear();
+        string thisScene = SceneManager.GetActiveScene().name;
+        string to = seasonContainer.GetNextLevel(thisScene);
+        if (to != null)
+            GoToLevel(to);
+        else
+            SceneManager.LoadScene(seasonContainer.GetLevelSeasonName(thisScene));
     }
-    public void NextLevel(string thisScene)
+    public void RestartLevel()
     {
-        string to = GetNextLevel(thisScene);
-        Save.Instance.levelDone.Add(thisScene);
+        CastHandler.Clear();
+        Time.timeScale = 1;
+        GameplayMenu.pause = false;
+        GoToLevel(SceneManager.GetActiveScene().name);
+    }
+    public void HandleWinLevel()
+    {
+        GameplayMenu.pause = false;
+        Save.Instance.AddDoneLevel(SceneManager.GetActiveScene().name);
+        StarsHandler.instance.PretendStars();
         Save.Keep();
-        SceneManager.LoadScene(to);
-    }
-    public void WinLevel()
-    {
 
+        menu.OpenWinMenu();
     }
-    public void LoseLevel()
+    public void HandleLoseLevel()
     {
-
+        RestartLevel();
     }
     public void ExitLevel()
     {
-
+        CastHandler.Clear();
+        SceneManager.LoadScene(seasonContainer.GetLevelSeasonName());
+    }
+    public static void GoToLevel(string levelName)
+    {
+        print(AdsHandler.instance);
+        if (UnityEngine.Random.value < 0.3f && AdsHandler.instance != null && !Save.Instance.adfree)
+            AdsHandler.instance.ShowInterstitial(levelName);
+        else
+            SceneManager.LoadScene(levelName);
     }
 }

@@ -23,6 +23,7 @@ public class MomentumLawHandler : PhysicsLawHandler
     protected override void EnableLaw()
     {
         mode = false;
+        StartCoroutine(ClearVelocity(0.05f));
     }
     protected override void DisableLaw()
     {
@@ -42,7 +43,17 @@ public class MomentumLawHandler : PhysicsLawHandler
                 rigidbody2D.velocity *= 0f;
                 rigidbody2D.angularVelocity *= 0f;
             }
+            
         }
         oldVelocity = rigidbody2D.velocity.sqrMagnitude;
+    }
+    IEnumerator ClearVelocity(float seconds)
+    {
+        Vector3 position = transform.position;
+        yield return new WaitForSeconds(seconds);
+        //print(rigidbody2D.velocity);
+        rigidbody2D.velocity *= 0f;
+        rigidbody2D.angularVelocity *= 0f;
+        transform.position = position;
     }
 }

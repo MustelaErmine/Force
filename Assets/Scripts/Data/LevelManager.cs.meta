@@ -3,7 +3,9 @@ guid: 12478f23020067e449496d3d6f58ead6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - localSeasonContainer: {fileID: 11400000, guid: 3fd6e39acaacae5418117004c0afeabc, type: 2}
+  - winLoseText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -36,6 +36,7 @@ public class EnergyLawHandler : PhysicsLawHandler
             {
                 yield return new WaitForSeconds(0.02f);
                 rigidbody2D.velocity *= 0.99f;
+                rigidbody2D.angularVelocity *= 0.99f;
             }
             yield return new WaitForEndOfFrame();
         }
