@@ -31,7 +31,7 @@ public class Movable : MonoBehaviour, IPointerClickHandler
     Transform _transform;
 
     float force = 0;
-    const float forcePerSecond = 0.75f;
+    const float forcePerSecond = 1.5f;
     const float forceCoeff = 300f;
 
     public HashSet<int> blockers = new HashSet<int>();

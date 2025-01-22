@@ -7,11 +7,18 @@ using TMPro;
 
 public class HelpHandler : MonoBehaviour, IPointerClickHandler
 {
+    [HideInInspector]
     [SerializeField]
     [TextArea]
     string text;
+    [HideInInspector]
     [SerializeField]
     TextMeshProUGUI textMesh;
+
+    [SerializeField] int animationName;
+    [SerializeField] Animator animator;
+
+    public static HelpHandler Instance { get; private set; }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -20,6 +27,26 @@ public class HelpHandler : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
+        Instance = this;
+        //SetNormalText();
+        if (animator != null)
+            animator.SetInteger("Level", animationName);
+        string levelName = SceneManager.GetActiveScene().name;
+        if (!Save.Instance.IsTipDone(levelName))
+        {
+            ActivateChildren(true);
+            Save.Instance.AddTipsDone(levelName);
+        }
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Destroy(gameObject);
+        }
+    }
+    void SetNormalText()
+    {
         text = text.Replace("\n", " ");
         text = text.Replace("\r", " ");
         while (text.Contains("  "))
@@ -27,12 +54,6 @@ public class HelpHandler : MonoBehaviour, IPointerClickHandler
             text = text.Replace("  ", " ");
         }
         textMesh.SetText(text);
-        string levelName = SceneManager.GetActiveScene().name;
-        if (!Save.Instance.IsTipDone(levelName))
-        {
-            ActivateChildren(true);
-            Save.Instance.AddTipsDone(levelName);
-        }
     }
 
     void ActivateChildren(bool isActive)

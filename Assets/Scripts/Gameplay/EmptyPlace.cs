@@ -7,6 +7,7 @@ public class EmptyPlace : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        CastHandler.ChosenMovable = null;
+        print("empty place");
+        //CastHandler.ChosenMovable = null;
     }
 }

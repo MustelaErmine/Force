@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,7 +64,7 @@ public class GameplayMenu : MonoBehaviour
             if (starsCount >= i)
                 stars[i - 1].sprite = starFilled;
         }
-        moves.text = $"’Ó‰Ó‚: {StarsHandler.instance.moves}";
+        moves.text = $"–•–æ–¥–æ–≤: {StarsHandler.instance.moves}";
         Time.timeScale = 0f;
     }
 }
