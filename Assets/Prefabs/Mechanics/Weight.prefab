@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7462986068578593794}
@@ -210,11 +210,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.54
+  m_fontSize: 3.95
   m_fontSizeBase: 3.4
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 3.21
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.55, y: 2, z: 9.55, w: 2}
+  m_margin: {x: 9.736928, y: 2.460948, z: 9.726307, w: 2.0955882}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 102698722908710239}
   - component: {fileID: 1088519366505338412}
   - component: {fileID: 675719809826470108}
-  - component: {fileID: 6639680650692946846}
+  - component: {fileID: 4674468406578874673}
   m_Layer: 0
   m_Name: Weight
   m_TagString: Untagged
@@ -358,8 +358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be463219c249154e895d0f85a288079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &6639680650692946846
-CircleCollider2D:
+--- !u!70 &4674468406578874673
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -390,6 +390,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.22}
-  serializedVersion: 2
-  m_Radius: 0.28
+  m_Offset: {x: 0, y: -0.18386474}
+  m_Size: {x: 0.7035499, y: 0.43585107}
+  m_Direction: 1

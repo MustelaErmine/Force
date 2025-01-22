@@ -21,11 +21,14 @@ public class Save
             return _instance;
         } 
     }
-
+#if !UNITY_WEBGL
     private static readonly string path = Application.persistentDataPath + @"\save.json";
-
+#endif
     public static void Load()
     {
+#if UNITY_WEBGL
+        Instance = new Save();
+#else
         if (!File.Exists(path))
         {
             Instance = new Save();
@@ -35,11 +38,14 @@ public class Save
         Instance = JsonConvert.DeserializeObject<Save>(File.ReadAllText(path));
         //AudioSettings.
         AudioListener.volume = Instance.audioSetting;
+#endif
     }
     public static void Keep()
     {
+#if !UNITY_WEBGL
         //File.WriteAllText(path, JsonUtility.ToJson(_instance));
         File.WriteAllText(path, JsonConvert.SerializeObject(_instance));
+#endif
     }
 
     public HashSet<string> levelDoneList = new HashSet<string>();

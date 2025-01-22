@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: waffel_0
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7270713384068094094, guid: 9e95642be496c0e40a716785518d12f6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.3876183, g: 0.9924528, b: 0.3876183, a: 1}
   m_Transform:
     e00: 1
     e01: 0
