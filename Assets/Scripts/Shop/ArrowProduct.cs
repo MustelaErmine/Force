@@ -1,4 +1,4 @@
-using RuStore.BillingClient;
+//using RuStore.BillingClient;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +58,7 @@ public class ArrowProduct : MonoBehaviour
     }
     public void Pay()
     {
-        RuStoreBillingClient.Instance.PurchaseProduct(
+        /*RuStoreBillingClient.Instance.PurchaseProduct(
             productId: productId,
             quantity: 1,
             developerPayload: "your payload",
@@ -67,6 +67,6 @@ public class ArrowProduct : MonoBehaviour
             },
             onSuccess: (result) => {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Costumisation");
-            });
+            });*/
     }
 }

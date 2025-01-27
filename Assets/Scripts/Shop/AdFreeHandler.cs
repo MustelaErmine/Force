@@ -1,4 +1,4 @@
-using RuStore.BillingClient;
+//using RuStore.BillingClient;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +17,7 @@ public class AdFreeHandler : MonoBehaviour
 
     public void Pay()
     {
-        RuStoreBillingClient.Instance.PurchaseProduct(
+        /*RuStoreBillingClient.Instance.PurchaseProduct(
             productId: "ads-free-1",
             quantity: 1,
             developerPayload: "your payload",
@@ -28,6 +28,6 @@ public class AdFreeHandler : MonoBehaviour
             onSuccess: (result) =>
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Costumisation");
-            });
+            });*/
     }
 }

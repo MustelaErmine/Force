@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6342fd0c9b9ffa943a1fb1417d892422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localedString: {fileID: 0}
   text: 
   textMesh: {fileID: 3751278693622086555}
 --- !u!1 &1461510347340018665
@@ -1421,7 +1422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024414062, y: -81.324646}
+  m_AnchoredPosition: {x: -0.00024414062, y: -81.67999}
   m_SizeDelta: {x: -488.4, y: 162.6494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4394446505195945829

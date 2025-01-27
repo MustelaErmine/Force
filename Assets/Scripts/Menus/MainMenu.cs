@@ -1,4 +1,4 @@
-using RuStore.BillingClient;
+//using RuStore.BillingClient;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        RuStoreBillingClient.Instance.GetPurchases(
+        /*RuStoreBillingClient.Instance.GetPurchases(
                     onFailure: (error) =>
                     {
                     },
@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
                             }
                         }
 
-                    });
+                    });*/
     }
 
     public void Exit()

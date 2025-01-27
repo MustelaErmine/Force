@@ -13,7 +13,10 @@ public class NotifyManager : MonoBehaviour
         instance = this;
         notifyStaticPrefab = notifyPrefab;
     }
-
+    public static void NotifyLocaled(LocaledString localedString)
+    {
+        Notify(localedString.Current);
+    }
     public static void Notify(string text)
     {
         instance.NotifyLocal(text);

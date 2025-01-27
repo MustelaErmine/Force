@@ -2336,6 +2336,10 @@ PrefabInstance:
         \u0438\u0437 \u0448\u043A\u043E\u043B\u044B \u0437\u0430\u043A\u043E\u043D\r\n       
         \u0440\u044B\u0447\u0430\u0433\u0430?"
       objectReference: {fileID: 0}
+    - target: {fileID: 5191040942082592007, guid: 4ddc6d21ac1c3d2498659a57254fa93b, type: 3}
+      propertyPath: localedString
+      value: 
+      objectReference: {fileID: 11400000, guid: b2a7f378bb8a99442980d65a0f47f380, type: 2}
     - target: {fileID: 5430925754643494671, guid: 4ddc6d21ac1c3d2498659a57254fa93b, type: 3}
       propertyPath: text
       value: "\u041F\u043E\u043C\u043D\u0438\u0442\u0435 \u043B\u0438 \u0432\u044B

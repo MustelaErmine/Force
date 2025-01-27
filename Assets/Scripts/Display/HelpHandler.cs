@@ -8,6 +8,8 @@ using TMPro;
 public class HelpHandler : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
+    LocaledString localedString;
+    [SerializeField]
     [TextArea]
     string text;
     [SerializeField]
@@ -20,13 +22,14 @@ public class HelpHandler : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        text = text.Replace("\n", " ");
-        text = text.Replace("\r", " ");
-        while (text.Contains("  "))
+        string localedText = localedString.Current;
+        localedText = localedText.Replace("\n", " ");
+        localedText = localedText.Replace("\r", " ");
+        while (localedText.Contains("  "))
         {
-            text = text.Replace("  ", " ");
+            localedText = localedText.Replace("  ", " ");
         }
-        textMesh.SetText(text);
+        textMesh.SetText(localedText);
         string levelName = SceneManager.GetActiveScene().name;
         if (!Save.Instance.IsTipDone(levelName))
         {

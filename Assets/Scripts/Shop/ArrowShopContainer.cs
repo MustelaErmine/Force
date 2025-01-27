@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RuStore.BillingClient;
+//using RuStore.BillingClient;
 
 public class ArrowShopContainer : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class ArrowShopContainer : MonoBehaviour
     void Awake()
     {
         instance = this;
-        RuStoreBillingClient.Instance.CheckPurchasesAvailability(
+        /*RuStoreBillingClient.Instance.CheckPurchasesAvailability(
             onFailure: (error) =>
             {
                 print(error);
@@ -28,7 +28,7 @@ public class ArrowShopContainer : MonoBehaviour
                 {
                     AllPayed();
                 }
-            });
+            });*/
     }
 
     public void UncheckAll()
@@ -39,7 +39,7 @@ public class ArrowShopContainer : MonoBehaviour
 
     public void OnPurchasesAvialible()
     {
-        RuStoreBillingClient.Instance.GetProducts(new string[2] { "ads-free-1", "boots_v1" },
+        /*RuStoreBillingClient.Instance.GetProducts(new string[2] { "ads-free-1", "boots_v1" },
             onFailure: (error) => {
                 AllPayed();
             },
@@ -78,7 +78,7 @@ public class ArrowShopContainer : MonoBehaviour
                             product.SetPayed(payed);
                         }
                     });
-            });
+            });*/
     }
     public void AllPayed()
     {
