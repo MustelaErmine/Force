@@ -1,7 +1,9 @@
+#define YG
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+#if !YG
 using YandexMobileAds;
 using YandexMobileAds.Base;
 
@@ -121,3 +123,4 @@ public class AdsHandler : MonoBehaviour
         }
     }
 }
+#endif

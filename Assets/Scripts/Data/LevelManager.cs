@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
     }
     public static void GoToLevel(string levelName)
     {
-        print(AdsHandler.instance);
+        //print(AdsHandler.instance);
         //if (UnityEngine.Random.value < 0.3f && AdsHandler.instance != null && !Save.Instance.adfree)
         //    AdsHandler.instance.ShowInterstitial(levelName);
         //else
