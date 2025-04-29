@@ -88,6 +88,7 @@ public class Save
     public bool adfree = false;
     public int earnedStars = 0;
     public DateTime starsBoostTime = DateTime.MinValue;
+    public LocaledString.Locale locale = LocaledString.Locale.ru_RU;
 
     public void AddDoneLevel(string level)
     {
@@ -108,7 +109,7 @@ public class Save
         int earnedCount = stars[levelName] - oldCount;
         if ((starsBoostTime - DateTime.Now).TotalMinutes < 5f)
         {
-            earnedCount *= 1;
+            earnedCount *= 2;
         }
         earnedStars += earnedCount;
         Keep();

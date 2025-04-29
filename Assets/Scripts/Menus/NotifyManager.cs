@@ -25,5 +25,6 @@ public class NotifyManager : MonoBehaviour
     {
         GameObject gameObject = Instantiate(notifyPrefab);
         gameObject.GetComponentInChildren<TMPro.TMP_Text>().SetText(text);
+        gameObject.GetComponent<Canvas>().worldCamera = Camera.main;
     }
 }

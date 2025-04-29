@@ -12,14 +12,18 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshStars;
-    [SerializeField]
-    private LocaledString boostLocaled;
+    [SerializeField] TMP_Dropdown langDropdown;
+    [SerializeField] LocaledString boostLocaled;
 
     void Start()
     {
         Time.timeScale = 1f;
         if (textMeshStars != null)
             textMeshStars.text = $"Stars: {Save.Instance.earnedStars}";
+        if (langDropdown != null)
+        {
+            langDropdown.value = Save.Instance.locale == LocaledString.Locale.ru_RU ? 0 : 1;
+        }
     }
 
     public void Exit()
@@ -44,6 +48,7 @@ public class MainMenu : MonoBehaviour
                     case YGAdResponse.AdGranted:
                         Debug.Log("Reward granted for watching ad.");
                         Save.Instance.starsBoostTime = DateTime.Now;
+                        Save.Keep();
                         NotifyManager.NotifyLocaled(boostLocaled);
                         break;
                     case YGAdResponse.AdClosed:
@@ -59,5 +64,20 @@ public class MainMenu : MonoBehaviour
                 Debug.LogError($"Failed to show rewarded ad: {error}");
             }
         });
+    }
+    public void HandleLanguage()
+    {
+        switch (langDropdown.value)
+        {
+            case 0:
+                Save.Instance.locale = LocaledString.Locale.ru_RU;
+                break;
+            case 1:
+                Save.Instance.locale = LocaledString.Locale.en_US;
+                break;
+            default:
+                break;
+        }
+        Save.Keep();
     }
 }

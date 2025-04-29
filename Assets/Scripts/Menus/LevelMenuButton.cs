@@ -1,3 +1,4 @@
+using PlayablesStudio.Plugins.YandexGamesSDK.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,7 @@ public class LevelMenuButton : MonoBehaviour
     IEnumerator ActivateCorounite()
     {
         yield return new WaitForSeconds(0.01f);
+        YandexGamesSDK.Instance.SetGameplayStart();
         LevelManager.GoToLevel(levelName);
     }
 }

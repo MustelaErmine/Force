@@ -22,7 +22,7 @@ public class LocaledString : ScriptableObject
     {
         ru_RU, en_US
     }
-    const Locale currentLocale = Locale.ru_RU;
+    public Locale CurrentLocale { get => Save.Instance.locale; }
     [SerializeField]
     public LocalePair[] strings;
     public string this[Locale locale] 
@@ -34,5 +34,5 @@ public class LocaledString : ScriptableObject
             return null;
         }
     }
-    public string Current { get => this[currentLocale]; }
+    public string Current { get => this[CurrentLocale]; }
 }

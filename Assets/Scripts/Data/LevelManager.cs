@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using System;
+using PlayablesStudio.Plugins.YandexGamesSDK.Runtime;
 
 public class LevelManager : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class LevelManager : MonoBehaviour
     public void ExitLevel()
     {
         CastHandler.Clear();
+        YandexGamesSDK.Instance.SetGameplayStop();
         SceneManager.LoadScene(seasonContainer.GetLevelSeasonName());
     }
     public static void GoToLevel(string levelName)
